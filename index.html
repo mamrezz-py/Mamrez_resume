@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Reza Abolghasemi | Generative AI & Content Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* Tailwind gray-950 */
+            color: #E5E7EB; /* Tailwind gray-200 */
+            cursor: none; /* Hide the default cursor */
+        }
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #22d3ee;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
+            z-index: 9999;
+        }
+        .custom-cursor.pointer {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(34, 211, 238, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #22d3ee, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #111827; /* gray-900 */
+            border: 4px solid #22d3ee; /* cyan-400 */
+            transition: transform 0.3s ease;
+        }
+        .timeline-item:hover::before {
+            transform: scale(1.2);
+        }
+        .skill-card {
+            background: rgba(17, 24, 39, 0.5); /* gray-900 with transparency */
+            border: 1px solid rgba(55, 65, 81, 0.5); /* gray-700 with transparency */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            border-color: #22d3ee;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.1), 0 4px 6px -4px rgba(34, 211, 238, 0.1);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #22d3ee;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #fff;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            background-color: #22d3ee;
+            color: #030712;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            z-index: 1000;
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0.8;
+        }
+        #back-to-top:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="custom-cursor"></div>
+
+    <!-- Background Glows -->
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-0 -left-20 w-72 h-72 bg-sky-400 rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+    <!-- Main Container -->
+    <div class="relative max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header & Nav -->
+        <header class="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-20">
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h1 class="text-2xl font-bold text-white tracking-tight">Mohammad Reza Abolghasemi</h1>
+            </div>
+            <nav class="flex space-x-6 text-gray-300">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="text-center mb-24 md:mb-32">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    I'm a <br class="hidden md:block"/> <span id="typed-text" class="gradient-text"></span>
+                </h2>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400">
+                    I merge the creative power of content with the precision of research and the utility of AI to educate, empower, and inspire.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="https://zil.ink/mamrezz.py" target="_blank" class="bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                        View My Portfolio
+                    </a>
+                    <a href="./Mohammadreza_Abolghasemi_Resume.pdf" download class="bg-gray-700/50 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-600/50 transition-all duration-300">
+                        Download CV
+                    </a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="mb-24 reveal">
+                <h3 class="text-3xl font-bold text-white mb-8 text-center">About Me</h3>
+                <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    Innovative and versatile specialist with 7+ years of experience across content production, teaching, and technical research. I excel at leveraging state-of-the-art AI tools—including LLMs, n8n, and multi-modal generative models—to automate and enhance content creation workflows. With a strong academic background in IT and a passion for simplifying technology, I empower communities through accessible education and creative automation.
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="mb-24 reveal">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Professional Experience</h3>
+                <div class="relative border-l-2 border-gray-800 ml-4 pl-10 space-y-12">
+                    <!-- Experience Item 1 -->
+                    <div class="relative timeline-item">
+                        <h4 class="text-xl font-bold text-cyan-400">AI Content Creator & Educator</h4>
+                        <p class="text-md font-medium text-gray-400">Freelance | Aug 2023 – Present</p>
+                        <ul class="mt-3 list-disc list-inside text-gray-300 space-y-1">
+                            <li>Grew @mamrezz.py to 50,000+ followers with daily AI-powered educational content.</li>
+                            <li>Built automated multi-platform content creation pipelines using n8n + LLMs.</li>
+                            <li>Developed and deployed Telegram bots for interactive education.</li>
+                        </ul>
+                    </div>
+                     <!-- Experience Item 2 -->
+                    <div class="relative timeline-item">
+                        <h4 class="text-xl font-bold text-cyan-400">Content Creator</h4>
+                        <p class="text-md font-medium text-gray-400">Dr. Haj Ahmad Soudagar Cultural Institute | Apr 2021 – Mar 2023</p>
+                        <ul class="mt-3 list-disc list-inside text-gray-300 space-y-1">
+                            <li>Led multimedia production for cultural initiatives (video, posters, digital marketing).</li>
+                            <li>Produced SEO-friendly blog content and contributed to content strategy.</li>
+                        </ul>
+                    </div>
+                     <!-- Experience Item 3 -->
+                    <div class="relative timeline-item">
+                        <h4 class="text-xl font-bold text-cyan-400">Researcher – Communication Networks</h4>
+                        <p class="text-md font-medium text-gray-400">Iran Telecommunication Research Center (ITRC) | Jun 2020 – Apr 2021</p>
+                        <ul class="mt-3 list-disc list-inside text-gray-300 space-y-1">
+                            <li>Investigated traffic analysis and implemented Python-based detection tools.</li>
+                            <li>Authored peer-reviewed technical reports from English sources.</li>
+                        </ul>
+                    </div>
+                     <!-- Experience Item 4 -->
+                    <div class="relative timeline-item">
+                        <h4 class="text-xl font-bold text-cyan-400">English & IELTS Instructor</h4>
+                        <p class="text-md font-medium text-gray-400">Freelance | 2019 – 2022</p>
+                        <ul class="mt-3 list-disc list-inside text-gray-300 space-y-1">
+                            <li>Taught IELTS prep courses with custom curricula for intermediate learners.</li>
+                            <li>Focused on exam strategy, communication skills, and personalized feedback.</li>
+                        </ul>
+                    </div>
+                     <!-- Experience Item 5 -->
+                    <div class="relative timeline-item">
+                        <h4 class="text-xl font-bold text-cyan-400">University Lecturer / Lab Supervisor</h4>
+                        <p class="text-md font-medium text-gray-400">Khaje Nasir Toosi University of Technology (KNTU) | Jan 2017 – Jan 2019</p>
+                        <ul class="mt-3 list-disc list-inside text-gray-300 space-y-1">
+                            <li>Delivered lab sessions on digital electronics for B.Sc. students.</li>
+                            <li>Supervised final projects across four academic semesters.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Competencies / Skills Section -->
+            <section id="skills" class="mb-24 reveal">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Core Competencies</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="skill-card rounded-xl p-6">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-4">Generative AI & Automation</h4>
+                        <p class="text-gray-300">LLMs, Prompt Engineering, AI Agents, n8n, Telegram Bots, Multi-modal Generative Tools.</p>
+                    </div>
+                    <div class="skill-card rounded-xl p-6">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-4">Digital Content Strategy</h4>
+                        <p class="text-gray-300">Social Media Growth, End-to-End Production, AI-Assisted Scriptwriting, Visual Branding.</p>
+                    </div>
+                    <div class="skill-card rounded-xl p-6">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-4">IT & Research Foundations</h4>
+                        <p class="text-gray-300">Python, MATLAB, Network Simulation, Graph Theory, Linux, Web Dev (HTML/CSS).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technical Skills Section -->
+            <section id="tech-skills" class="mb-24 reveal">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Technical Skills</h3>
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-lg text-cyan-400 mb-3">Programming</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Python</span>
+                            <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">MATLAB</span>
+                            <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">HTML</span>
+                            <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">CSS</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">C++</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-lg text-cyan-400 mb-3">AI & Automation</h4>
+                        <div class="flex flex-wrap gap-3">
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">ChatGPT</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Claude</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Gemini</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Midjourney</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">ElevenLabs</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Grok</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">And more...</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg text-cyan-400 mb-3">Tools & Platforms</h4>
+                        <div class="flex flex-wrap gap-3">
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Photoshop</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Premiere</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Canva</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">CapCut</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Instagram</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">YouTube</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Telegram</span>
+                             <span class="bg-gray-800 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education & Publications -->
+            <section id="education" class="mb-24 reveal">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Education & Publications</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-card rounded-xl p-6">
+                        <h4 class="text-xl font-bold text-cyan-400">M.Sc. Information Technology</h4>
+                        <p class="font-medium text-gray-300">Khaje Nasir Toosi University of Technology</p>
+                        <p class="text-sm text-gray-400">GPA: 18.02/20</p>
+                    </div>
+                    <div class="skill-card rounded-xl p-6">
+                        <h4 class="text-xl font-bold text-cyan-400">B.Sc. Hardware Engineering</h4>
+                        <p class="font-medium text-gray-300">Khaje Nasir Toosi University of Technology</p>
+                        <p class="text-sm text-gray-400">GPA: 16.33/20</p>
+                    </div>
+                     <div class="skill-card rounded-xl p-6 md:col-span-2">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-2">Publication</h4>
+                        <p class="text-gray-300">Abolghasemi, M. R. et al. (2019). <span class="font-semibold">Interdependent Network Formation Game Using TLBO Algorithm.</span> 27th Iranian Conference on Electrical Engineering (ICEE). <a href="https://doi.org/10.1109/ICEE.2019.8786605" target="_blank" class="text-cyan-400 hover:underline">DOI: 10.1109/ICEE.2019.8786605</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="text-center border-t border-gray-800 pt-10 mt-10 reveal">
+            <h3 class="text-3xl font-bold text-white mb-4">Get In Touch</h3>
+            <p class="text-gray-400 mb-6">Let's connect and build something amazing together.</p>
+            <a href="mailto:mamrezz.py@gmail.com" class="inline-block bg-cyan-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                mamrezz.py@gmail.com
+            </a>
+            <div class="flex justify-center space-x-6 mt-8">
+                <a href="https://www.instagram.com/mamrezz.py/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Instagram</a>
+                <a href="https://www.youtube.com/@mamrezz_py" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">YouTube</a>
+                <a href="https://zil.ink/mamrezz.py" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Portfolio</a>
+            </div>
+            <p class="text-sm text-gray-600 mt-10">© 2024 Mohammad Reza Abolghasemi. Designed & Built with ❤️.</p>
+        </footer>
+    </div>
+    
+    <a href="#home" id="back-to-top" title="Go to top">↑</a>
+
+    <script>
+        // --- Custom Cursor ---
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: "+(e.pageY - scrollY)+"px; left: "+e.pageX+"px;")
+        });
+        document.addEventListener('mousedown', () => cursor.classList.add('pointer'));
+        document.addEventListener('mouseup', () => cursor.classList.remove('pointer'));
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseover', () => cursor.classList.add('pointer'));
+            el.addEventListener('mouseout', () => cursor.classList.remove('pointer'));
+        });
+
+
+        // --- Typed.js for Hero Section ---
+        const typed = new Typed('#typed-text', {
+            strings: ['Generative AI Specialist.', 'Digital Content Creator.', 'Educator & Researcher.'],
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 2000,
+            loop: true,
+        });
+
+        // --- ScrollReveal animations ---
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '50px',
+            duration: 800,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            interval: 150,
+            origin: 'bottom',
+        });
+
+        // --- Back to Top Button ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // --- Tailwind config for animations ---
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+</body>
+</html>
